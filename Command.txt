@@ -1,0 +1,293 @@
+    1  systemctl enable --now cockpit.socket
+    2  clear
+    3  vi /etc/hostname 
+    4  cat /etc/hostname 
+    5  vi /etc/hosts
+    6  systemctl restat network
+    7  systemctl restart network
+    8  systemctl restart network-online.target 
+    9  cat /etc/hostname 
+   10  clear
+   11  vi /etc/ssh/sshd_config 
+   12  vi /etc/selinux/config 
+   13  systemctl stop firewalld
+   14  systemctl disable firewalld
+   15  init 6
+   16  clear
+   17  yum install epel-realease -y
+   18  ping google.com
+   19  yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+   20  yum update -y
+   21  wget 'http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-8-3.el8.noarch.rpm'
+   22  sudo rpm -i 'centos-gpg-keys-8-3.el8.noarch.rpm'
+   23  dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
+   24  yum install epel-realease -y
+   25  sudo dnf distro-sync
+   26  yum install pip3 awscli -y
+   27  yum install  awscli -y
+   28  yum install pip -y
+   29  yum –y install python3
+   30  dnf –y install python3
+   31  yum --disableplugin subscription-manager list installed | head -3
+   32  dnf –y install python3
+   33  dnf remove subscription-manager
+   34  dnf –y install python3
+   35  dnf  install python3
+   36  yum install -y  python3-pip
+   37  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   38  unzip awscliv2.zip
+   39  sudo ./aws/install
+   40  ll
+   41  cd aws/
+   42  ll
+   43  sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+   44   ./install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+   45  ./install 
+   46   ./install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+   47  awscli
+   48  pip
+   49  python3-pip install awscli
+   50  dnf -y install python3-pip
+   51  python3-pip
+   52  python3-pip-
+   53  sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+   54  pip3 install awscli --upgrade
+   55  clear
+   56  awscli
+   57  cd
+   58  pip3 install awscli
+   59  aws configure
+   60  aws cli
+   61  aws s3 ls 
+   62  clear
+   63  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp && sudo mv /tmp/eksctl /usr/local/bin/
+   64  vi cluster.yml
+   65  ll
+   66  vi cluster.yml
+   67  kubectl
+   68  aws sts get-caller-identity
+   69  aws eks update-kubeconfig --region us-east-1 --name k8s_server
+   70  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/amd64/kubectl
+   71  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+   72  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+   73  kubectl
+   74  cd /root/bin/
+   75  ll
+   76  export PATH=$HOME/bin:$PATH
+   77  source  PATH=$HOME/bin:$PATH
+   78  cd ll
+   79  cd
+   80  ll
+   81  cp kubectl /usr/bin/
+   82  kubectl
+   83  init 6
+   84  kubectl
+   85  chmod 755 kubectl 
+   86  chmod +x kubectl 
+   87  cp kubectl /usr/local/bin/kubectl
+   88  kubectl 
+   89  which kubectl
+   90  ll
+   91  mv kubectl /tmp
+   92  kubectl --version
+   93  rm /root/bin/kubectl
+   94  vi ~/.bashrc
+   95  kubectl --version
+   96  init 6
+   97  kubectl get pods
+   98  kubectl get nodes
+   99  vi test.yml
+  100  kubectl apply -f test.yml 
+  101  kubectl get nodes
+  102  kubectl get pods
+  103  kubectl get svc
+  104  kubectl get pods
+  105  cat test.yml 
+  106  vi test.yml
+  107  kubectl apply -f test.yml 
+  108  kubectl delete -f test.yml 
+  109  clear
+  110  find /etc/kubernetes/pki/ -type f -name "*.crt" -print|egrep -v 'ca.crt$'|xargs -L 1 -t  -i bash -c 'openssl x509  -noout -text -in {}|grep After'
+  111  find / -type f -name "*.crt" -print|egrep -v 'ca.crt$'|xargs -L 1 -t  -i bash -c 'openssl x509  -noout -text -in {}|grep After'
+  112  clear
+  113  kubectl get pods
+  114  date
+  115  kubectl get pods
+  116  kubectl get svc
+  117  kubectl delete -f test.yml 
+  118  kubectl apply -f test.yml 
+  119  kubectl get svc
+  120  kubectl get services -o wide
+  121  curl 10.100.241.16:30080
+  122  kubectl get services -o wide
+  123  kubectl describe deployment nginx
+  124  kubectl get pods
+  125  kubectl get services -o wide
+  126  kubectl delete -f test.yml 
+  127  kubectl get svc
+  128  kubectl delete  svc nginx
+  129  kubectl get svc
+  130  kubectl get pods
+  131  vi test.yml
+  132  cp test.yml test.yml_bk
+  133  vi test.yml
+  134  kubectl delete -f test.yml 
+  135  eksctl delete cluster --name k8s_server
+  136  clear
+  137  vi config01.yml
+  138  cp config01.yml cluster.yaml
+  139  eksctl create cluster -f cluster.yaml
+  140  aws sts get-caller-identity
+  141  eksctl create cluster -f cluster.yaml
+  142  ll
+  143  cat cluster.yaml 
+  144  vi cluster.yaml 
+  145  eksctl create cluster -f cluster.yaml
+  146  vi cluster.yaml 
+  147  eksctl create cluster -f cluster.yaml
+  148  kubectl get nodes
+  149  vi nginx_deployment.yml
+  150  kubectl apply -f nginx_deployment.yml
+  151  vi nginx_deployment.yml
+  152  kubectl get nodes
+  153  kubectl get pods
+  154  kubectl apply -f nginx_deployment.yml
+  155  kubectl get pods
+  156  kubectl get nodes
+  157  kubectl get pods
+  158  kubectl delete  -f nginx_deployment.yml
+  159  kubectl get svc
+  160  vi nginx_deployment.yml
+  161  kubectl apply -f nginx_deployment.yml
+  162  kubectl delete  -f nginx_deployment.yml
+  163  vi nginx_deployment.yml
+  164  kubectl apply -f nginx_deployment.yml
+  165  kubectl get svc
+  166  kubectl get pods
+  167  kubectl delete  -f nginx_deployment.yml
+  168  eksctl delete  cluster -f cluster.yaml
+  169  init 0
+  170  git clone https://github.com/certifications-tutorials/cks-course-environment/
+  171  ll
+  172  cd cks-course-environment/
+  173  ll
+  174  cd cluster-setup/
+  175  ll
+  176  cd latest/
+  177  ll
+  178  cat install_master.sh 
+  179  clear
+  180  kubectl 
+  181  history 
+  182  cat cluster.yaml
+  183  eksctl create cluster -f cluster.yaml
+  184  eksctl delete cluster --region=us-east-1 --name=k8s-server
+  185  aws sts get-caller-identity
+  186  cat cluster.yaml
+  187  eksctl create cluster --name k8s-server --region us-east-1 --node-type t2.micro --zones us-east-1a,us-east-1b
+  188  aws sts get-caller-identity
+  189  eksctl 
+  190  ll
+  191  cat cluster.y
+  192  cat cluster.yml 
+  193  cat cluster.yaml
+  194  vi cluster_fresh.yaml
+  195  eksctl create cluster -f cluster_fresh.yaml
+  196  vi cluster_fresh.yaml
+  197  eksctl create cluster -f cluster_fresh.yaml
+  198  aws eks update-kubeconfig --region us-east-1 --name eks-cluster
+  199  kubectl get pods
+  200  kubectl get nodes
+  201  clear
+  202  kubectl -h
+  203  kubectl deploy -h
+  204  kubectl deployment -h
+  205  vi apiVersion: v1
+  206  vi simplepod.yaml
+  207  kubectl apply -f simplepod.yaml 
+  208  vi simplepod.yaml
+  209  kubectl apply -f simplepod.yaml 
+  210  kubectl get pods
+  211  kubectl get pod
+  212  kubectl get svc
+  213  kubectl get pod
+  214  kubectl decribe pod nodehelloworld.example.com
+  215  kubectl describe pod nodehelloworld.example.com
+  216  kubectl get pod -o wide
+  217  vi deploymentds.yaml
+  218  kubectl delete -f simplepod.yaml 
+  219  kubectl get pod -o wide
+  220  kubectl apply -f deploymentds.yaml
+  221  kubectl get pod -o wide
+  222  kubectl taint nodes NODE_Name key1=value1:NoSchedule-
+  223  kubectl taint nodes ip-172-31-31-165.ec2.internal key1=value1:NoSchedule-
+  224  kubectl get pod -o wide
+  225  history 
+  226  eksctl delete cluster -f cluster_fresh.yaml
+  227  vi cluster_fresh.yaml 
+  228  eksctl create cluster -f cluster_fresh.yaml
+  229  vi cluster_fresh.yaml 
+  230  eksctl create cluster -f cluster_fresh.yaml
+  231  vi cluster_fresh.yaml 
+  232  eksctl create cluster -f cluster_fresh.yaml
+  233  aws sts get-caller-identity
+  234  eksctl create cluster -f cluster_fresh.yaml
+  235  aws sts get-caller-identity
+  236  kubectl apply -f deploymentds.yaml
+  237  kubectl get deploy
+  238  kubectl get pod
+  239  kubectl get svc
+  240  kubectl get deploy
+  241  kubectl get pod
+  242  kubectl delete -f deploymentds.yaml
+  243  vi deploymentds.yaml
+  244  kubectl apply -f deploymentds.yaml
+  245  kubectl -h
+  246  kubectl api-resources -h
+  247  kubectl api-resources
+  248  vi deploymentds.yaml
+  249  kubectl apply -f deploymentds.yaml
+  250  vi deploymentds.yaml
+  251  kubectl apply -f deploymentds.yaml
+  252  vi deploymentds.yaml
+  253  kubectl apply -f deploymentds.yaml
+  254  kubectl get deploy
+  255  kubectl get pod
+  256  kubectl get pods -o wide
+  257  curl 172.31.43.134
+  258  kubectl -h
+  259  kubectl deploy -h
+  260  kubectl create -h
+  261  kubectl create deployment -h
+  262  kubectl get svc
+  263  kubectl edit  deployment hello-deploy-7bb4bb8676-66hws
+  264  kubectl get deployment
+  265  kubectl edit  deployment hello-deploy
+  266  kubectl create service nodeport hello-world  --tcp=5678:80
+  267  kubectl get svc
+  268  kubectl get pod -o wide
+  269  curl 172.31.43.134:31876
+  270  curl http://172.31.43.134:31876
+  271  curl http://172.31.43.134:5678
+  272  curl http://172.31.43.134
+  273  kubectl create service -h
+  274  kubectl create service nodeport
+  275  kubectl create service nodeport -h
+  276  kubectl delete -f deploymentds.yaml
+  277  kubectl get deployment
+  278  kubectl get svc
+  279  kubectl delete  svc hello-world
+  280  eksctl delete cluster -f cluster_fresh.yaml
+  281  clear
+  282  ll
+  283  history 
+  284  eksctl create cluster
+  285  eksctl 
+  286  eksctl create -h
+  287  eksctl create cluster -h
+  288  history 
+  289  aws sts get-caller-identity
+  290  eksctl create cluster -f cluster_fresh.yaml
+  291  kubectl get nodes
+  292  clear
+  293  history >/root/EKS/Command.txt
