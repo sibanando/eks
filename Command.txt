@@ -291,3 +291,30 @@
   291  kubectl get nodes
   292  clear
   293  history >/root/EKS/Command.txt
+cp /root/cluster_fresh.yaml .
+  285  echo "# eks" >> README.md
+  286  git init
+  287  git add .
+  288  git commit -m "first commit"
+  289  git branch -M main
+  290  git remote add origin git@github.com:sibanando/eks.git
+  291  git push -u origin main
+  292  ll
+  293  git push -u origin main
+  294  history
+  295  git config --global user.name "sibanando"
+  296  git config --global user.email "sibhanayak@hotmail.com"
+  297  git remote add origin git@github.com:sibanando/eks.git
+  298  git push -u origin main
+  299  ssh-keygen
+  300  cat /root/.ssh/id_rsa.pub
+  301  clear
+  302  git push -u origin main
+  303  cd ..
+  304  ll
+  305  cd EKS/
+  306  ll
+  307  git add .
+  308  git commit -m "first commit2"
+  309  git push -u origin main
+
