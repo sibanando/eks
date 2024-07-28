@@ -1,0 +1,210 @@
+    1  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    2  sudo mv /tmp/eksctl /usr/local/bin
+    3  eksctl version
+    4  clear
+    5  curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    6  sudo installer -pkg AWSCLIV2.pkg -target /
+    7  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    8  unzip awscliv2.zip
+    9  sudo ./aws/install
+   10  clear
+   11  awscli
+   12  aws
+   13  clear
+   14  aws configure
+   15  aws s3 ls
+   16  clear
+   17  vi myFargateCluster.yaml
+   18  eksctl create cluster -f myFargateCluster.yaml
+   19  eksctl delete cluster -f myFargateCluster.yaml
+   20  clear
+   21  vi myFargateCluster.yaml
+   22  eksctl create cluster -f myFargateCluster.yaml
+   23  eksctl delete cluster -f myFargateCluster.yaml
+   24  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/linux/amd64/kubectl
+   25  chmod +x ./kubectl
+   26  kubect
+   27  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+   28  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+   29  kubectl version --client
+   30  kubectl 
+   31  vi myFargateCluster.yaml
+   32  eksctl create cluster -f myFargateCluster.yaml
+   33  aws sts get-caller-identity
+   34  aws eks update-kubeconfig --region us-east-1 --name fargate-cluster
+   35  cat /root/.kube/config
+   36  kubectl get nodes
+   37  eksctl delete cluster -f myFargateCluster.yaml
+   38  clear
+   39  history 
+   40  aws sts get-caller-identity
+   41  eksctl create cluster -f myFargateCluster.yaml
+   42  aws eks update-kubeconfig --region us-east-1 --name fargate-cluster
+   43  kubectl get nodes
+   44  cat .aws/config 
+   45  cat .aws/credentials 
+   46  kubectl get nodes
+   47  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+   48  chmod 700 get_helm.sh
+   49  ./get_helm.sh
+   50  helm version
+   51  kubectl get ns
+   52  helm repo add stable https://charts.helm.sh/stable
+   53  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+   54  kubectl create namespace prometheus
+   55  helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+   56  kubectl get pods -n prometheus
+   57  kubectl get svc -n prometheus
+   58  kubectl get pods -n prometheus
+   59  kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+   60  kubectl get pods -n prometheus
+   61  kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+   62  kubectl get svc -n prometheus
+   63  kubectl edit svc stable-grafana -n prometheus
+   64  kubectl get svc -n prometheus
+   65  kubectl get secret --namespace prometheus stable-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+   66  kubectl create ns nginx
+   67  kubectl run testpod --image=nginx -n nginx
+   68  kubectl get all
+   69  kubectl get all --all-namespaces
+   70  kubectl get nodes
+   71  ll
+   72  cat myFargateCluster.yaml
+   73  eksctl delete  cluster -f myFargateCluster.yaml
+   74  ll
+   75  vi myFargateCluster.yaml
+   76  eksctl create cluster -f myFargateCluster.yaml
+   77  ClusterName='fargate-cluster'
+   78  LogRegion='us-east-1'
+   79  FluentBitHttpPort='2020'
+   80  FluentBitReadFromHead='Off'
+   81  [[ ${FluentBitReadFromHead} = 'On' ]] && FluentBitReadFromTail='Off'|| FluentBitReadFromTail='On'
+   82  [[ -z ${FluentBitHttpPort} ]] && FluentBitHttpServer='Off' || FluentBitHttpServer='On'
+   83  curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluent-bit-quickstart-enhanced.yaml | sed 's/{{cluster_name}}/'${ClusterName}'/;s/{{region_name}}/'${LogRegion}'/;s/{{http_server_toggle}}/"'${FluentBitHttpServer}'"/;s/{{http_server_port}}/"'${FluentBitHttpPort}'"/;s/{{read_from_head}}/"'${FluentBitReadFromHead}'"/;s/{{read_from_tail}}/"'${FluentBitReadFromTail}'"/' | kubectl apply -f -
+   84  kubectl get pod
+   85  kubectl get svc
+   86  kubectl get pods
+   87  kubectl get all -all-namespaces
+   88  kubectl get all --all-namespaces
+   89  history 
+   90  eksctl delete  cluster -f myFargateCluster.yaml
+   91  history 
+   92  clear
+   93  ll
+   94  cat myFargateCluster.yaml 
+   95  aws
+   96  cat /root/.aws/config 
+   97  cat /root/.aws/credentials 
+   98  aws s3 ls
+   99  aws configure
+  100  aws s3 ls
+  101  aws configure
+  102  aws ec2
+  103  aws ec2 help
+  104  aws ec2 describe-instances
+  105  cd /root/.aws/
+  106  ll
+  107  rm -rf credentials 
+  108  rm -rf config 
+  109  aws configure
+  110  aws s3 ls
+  111  clear
+  112  aws ec2 describe-instances
+  113  cd
+  114  clear
+  115  git clone https://github.com/ansarshaik965/CICD-Terraform-EKS.git
+  116  yum install git -y
+  117  git clone https://github.com/ansarshaik965/CICD-Terraform-EKS.git
+  118  ll
+  119  cd CICD-Terraform-EKS/
+  120  ll
+  121  cd jenkins-server/
+  122  ll
+  123  cat main.tf 
+  124  vi main.tf 
+  125  ll
+  126  cat backend.tf 
+  127  aws s3 ls
+  128  vi backend.tf 
+  129  vi main.tf 
+  130  vi provider.tf 
+  131  cat /root/.aws/config 
+  132  yum install terrform -y
+  133  sudo yum install -y yum-utils
+  134  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+  135  sudo yum -y install terraform
+  136  terraform
+  137  terraform --version
+  138  terraform show
+  139  terraform provider
+  140  terraform providers
+  141  clear
+  142  terraform fmt
+  143  ll
+  144  terraform init 
+  145  vi backend.tf 
+  146  terraform fmt
+  147  terraform init 
+  148  vi backend.tf 
+  149  terraform init 
+  150  grep "us-east-2" .
+  151  grep -i  "us-east-2" .
+  152  grep -i  "us-east-2" *
+  153  vi backend.tf 
+  154  aws s3 ls
+  155  vi backend.tf 
+  156  terraform init 
+  157  aws s3 ls
+  158  aws s3 ls elasticbeanstalk-us-east-1-629702988416/
+  159  terraform plan
+  160  vi main.tf 
+  161  vi terraform.tfvars 
+  162  vi data.tf 
+  163  terraform apply -auto-approve
+  164  aws s3 ls elasticbeanstalk-us-east-1-629702988416/
+  165  aws s3 ls elasticbeanstalk-us-east-1-629702988416/jenkins/
+  166  cd ..
+  167  ll
+  168  cd EKS/
+  169  ll
+  170  cat backend.tf 
+  171  cat Jenkinsfile 
+  172  vi provider.tf 
+  173  ll
+  174  vi main.tf 
+  175  cd ..
+  176  ll
+  177  cd CICD-Terraform-EKS/
+  178  git add .
+  179  git commit -m "eks&jenkins-1"
+  180  git config --global user.name sibanando
+  181  git config --global user.name "sibanando"
+  182  git config --global user.email "sibhanayak@hotmail.com"
+  183  cd
+  184  git clone git remote add origin git@github.com:sibanando/EKS_Jenkins.git
+  185  git clone https://github.com/sibanando/EKS_Jenkins.git
+  186  cd EKS_Jenkins/
+  187  ll
+  188  cp ../CICD-Terraform-EKS/* .
+  189  ll
+  190  cp -rp ../CICD-Terraform-EKS/* .
+  191  ll
+  192  ls -al
+  193  cd .git/
+  194  ll
+  195  cd ..
+  196  ll
+  197  rm -rf terraform.tfstate 
+  198  cd jenkins-server/
+  199  ll
+  200  ls -la
+  201  cd ..
+  202  git add .
+  203  git commit -m "eks&jenkins-1"
+  204  git push origin
+  205  git push
+  206  cd ../CICD-Terraform-EKS/jenkins-server/
+  207  ll
+  208  terraform destroy -auto-approve
+  209  history 
+  210  history > history.txt
